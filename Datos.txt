@@ -1,0 +1,14 @@
+Mascota:(Tía puede llenar)
+	-Nombre
+	-Especie
+	-Sexo
+-----------------------
+	-Raza
+	-Castrada: Si/No
+	-Fecha de nacimiento / Edad
+	-Pelaje {
+	-Tipico de la especie
+	-Color (Negro/Beige/Marron/Aprico/Blanco/Abisinio, atigrado ,calicoe, otro)
+	}
+	-Temperamento (Dócil,Bravo,Medio)
+	-Utilidad (Mascota/Trabajo)
