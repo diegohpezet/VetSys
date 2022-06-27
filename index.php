@@ -3,7 +3,6 @@ session_start();
 require 'sub/database.php';
 
 if (isset($_SESSION['user_dni'])) {
-
     $records = $conn->prepare('SELECT dni, email, pass FROM user WHERE id = :id');
     $records->bindParam(':dni', $_SESSION['user_dni']);
     $records->execute();

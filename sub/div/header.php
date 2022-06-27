@@ -45,7 +45,7 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Turnos</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="medsys.php">Todos los turnos</a></li>
-                            <li><a class="dropdown-item" href="#">Asignar turno</a></li>
+                            <li><a class="dropdown-item" href="asignarturno.php">Asignar turno</a></li>
                             <li><a class="dropdown-item" href="#">Editar turno</a></li>
                         </ul>
                     </li>

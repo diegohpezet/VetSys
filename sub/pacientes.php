@@ -24,7 +24,36 @@ if (isset($_GET['datos_mascota'])) {
     if (count($results) > 0) {
         $mascota = $results;
     }
+
+    if ($mascota['especie'] == 'Perro'){
+        $stmt = $conn->prepare("SELECT * FROM razas_perros");
+        $stmt->execute();
+        $razas_perros = $stmt->fetchAll();
+        
+        $razas = null;
+        
+        if (is_countable($razas_perros)) {
+            if (count($razas_perros) != 0) {
+                $razas = $razas_perros;
+            }
+        }
+    } else if($mascota['especie'] == 'Gato') {
+        $stmt = $conn->prepare("SELECT * FROM razas_gatos");
+        $stmt->execute();
+        $razas_gatos = $stmt->fetchAll();
+        
+        $razas = null;
+        
+        if (is_countable($razas_gatos)) {
+            if (count($razas_gatos) != 0) {
+                $razas = $razas_gatos;
+            }
+        }
+    }
 }
+
+
+
 
 if ('cargarDatos') {
     if (!empty($_POST['raza']) and !empty($_POST['peso']) and !empty($_POST['etapa'])) {
@@ -34,7 +63,7 @@ if ('cargarDatos') {
             `etapa` = :etapa
       WHERE `id_mascota` = :id
       ";
-
+// UPDATE mascotas set raza = COALESCE($_POST['raza'], raza)
         $statement = $conn->prepare($sql);
         $statement->bindValue(":raza", $_POST['raza']);
         $statement->bindValue(":peso", $_POST['peso']);
@@ -69,6 +98,9 @@ if ('modificarPeso') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
 
     <title>Pacientes | MedSys</title>
@@ -80,7 +112,7 @@ if ('modificarPeso') {
     <!--Veterinario-->
     <div class="container mt-3 ">
         <form action="pacientes.php" method="get">
-            <select class="form-select " name="datos_mascota" onchange="this.form.submit()" required>
+            <select class="select-box" name="datos_mascota" onchange="this.form.submit()" required>
                 <option selected value>Seleccione una mascota...</option>
                 <?php foreach ($mascotas as $row) : ?>
                     <option value="<?php echo $row['id_mascota'] ?>"><?php echo $row['nombre'], " | ", $row['dueño'], " (", $row['id_dueño'], ")" ?></option>
@@ -123,8 +155,14 @@ if ('modificarPeso') {
                 <form method="post" action="pacientes.php">
                     <input type='number' style="display:none" name='id' value=<?php echo $mascota['id_mascota'] ?>>
                     <div class='form-group row'>
-                        <div class='col col-xs-3 m-2'>
-                            Raza: <input class='input-sm' type='text' name='raza' required>
+                        <div>
+                            Raza: <select id="select_box" name='raza' required>
+                                    <option value="" disabled selected>Seleccione la raza</option>
+                                    <option value="Mestizo">Mestizo</option>
+                                    <?php foreach ($razas as $row) : ?>
+                                        <option value="<?php echo $row['raza'] ?>"><?php echo $row['raza']?></option>
+                                    <?php endforeach ?>
+                                </select>
                         </div>
                         <div class='col col-xs-3 m-2'>
                             Peso: <input class='input-sm' type='number' name='peso' required>
@@ -170,3 +208,11 @@ if ('modificarPeso') {
     <?php endif; ?>
 </body>
 </html>
+
+<script>
+  $(document).ready(function () {
+      $('select').selectize({
+          sortField: 'text'
+      });
+  });
+</script>

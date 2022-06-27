@@ -1,6 +1,10 @@
 <?php
 include("div/connect.php");
 
+if (!isset($_SESSION['user_dni'])) {
+    Header("Location: /sub/index.php");
+}
+
 /* <Select> de cambiar fecha */
 $row = $conn->prepare("SELECT nro_Turno FROM turnos WHERE dni_cliente=:dni");
 $row->bindParam('dni', $user['dni']);
@@ -17,16 +21,30 @@ if (isset($_POST['modificarFecha'])) {
 }
 
 /* Display de datos */
-$stmt = $conn->prepare("SELECT * FROM turnos WHERE dni_cliente = :dni");
-$stmt->bindParam(':dni', $user['dni']);
-$stmt->execute();
-$results_turnos = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($user['status'] == 0){
+    $stmt = $conn->prepare("SELECT * FROM turnos WHERE dni_cliente = :dni");
+    $stmt->bindParam(':dni', $user['dni']);
+    $stmt->execute();
+    $results_turnos = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$turnos = null;
+    $turnos = null;
 
-if (is_countable($results_turnos)) {
-    if (count($results_turnos) != 0) {
-        $turnos = $results_turnos;
+    if (is_countable($results_turnos)) {
+        if (count($results_turnos) != 0) {
+            $turnos = $results_turnos;
+        }
+    }
+} else {
+    $stmt = $conn->prepare("SELECT * FROM turnos WHERE 1 ");
+    $stmt->execute();
+    $result_turnos = $stmt->fetchAll();
+
+    $turnos = null;
+
+    if (is_countable($result_turnos)) {
+        if (count($result_turnos) != 0) {
+            $turnos = $result_turnos;
+        }
     }
 }
 ?>
@@ -49,7 +67,7 @@ if (is_countable($results_turnos)) {
     <?php include("div/header.php") ?>
     <?php if ($user['status'] != 1) : ?>
         <!--Contenido-->
-        <?php if ($turnos) : ?>
+        <?php if ($user['status'] == 0 && $turnos) : ?>
             <div class="container" id="misturnos">
                 <div class="container mt-3">
                     <h2>Mis turnos:</h2>
@@ -96,8 +114,17 @@ if (is_countable($results_turnos)) {
         <?php endif; ?>
 
         <?php include('modal/modificarfecha.php') ?>
-    <?php else : ?>
-        <!--Veterinario-->
+    <?php elseif ($user['status'] == 1 && $turnos) : ?>  <!--Veterinario-->
+       <?php foreach ($turnos as $row): ?>
+            <div class="container mt-3 border p-3">
+                <tr>
+                    <td><?php echo 'Cliente: '.$row["dni_cliente"].''?></td>
+                    <td><?php echo ''?></td>
+                    <td><?php echo ''?></td>
+                    <td><?php echo ''?></td>
+                </tr>         
+            </div>
+        <?php endforeach; ?>
     <?php endif; ?>
 </body>
 

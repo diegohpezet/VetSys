@@ -11,12 +11,12 @@ $row->execute();
 $asunto = $row->fetchAll();
 
 if (!empty($_POST['id_mascota']) && !empty($_POST['asunto']) && !empty($_POST['fecha'])) {
-    $row = $conn->prepare("SELECT nombre FROM mascotas WHERE id_mascota = ".$_POST['id_mascota']."");
+    $row = $conn->prepare("SELECT nombre FROM mascotas WHERE id_mascota = ".$_POST['id_mascota']." INNER JOIN clientes ON mascotas.dni = clientes.dni");
     $row->execute();
     $nombre = $row->fetchColumn();
 
-    $sql = "INSERT INTO turnos (dni_cliente,asunto,id_mascota,mascota,fecha) values 
-        (:dni,:asunto,:id_mascota,:mascota,:fecha)";
+    $sql = "INSERT INTO turnos (dni_cliente,cliente,asunto,id_mascota,mascota,fecha) values 
+        (:dni,'" . $user['nombre'] . " " . $user['apellido'] . "',:asunto,:id_mascota,:mascota,:fecha)";
 
     $stmt = $conn->prepare($sql);
 
