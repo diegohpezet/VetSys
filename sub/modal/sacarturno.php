@@ -1,12 +1,10 @@
 <?php
+include("div/variables.php");
+
 $row = $conn->prepare("SELECT * FROM mascotas WHERE id_dueño=:dni");
 $row->bindParam('dni', $user['dni']);
 $row->execute();
 $mascota = $row->fetchAll();
-
-$row = $conn->prepare("SELECT especialidad FROM especialidades ORDER BY especialidad");
-$row->execute();
-$asunto = $row->fetchAll();
 
 if (!empty($_POST['id_mascota']) && !empty($_POST['asunto']) && !empty($_POST['fecha'])) {
     $row = $conn->prepare("SELECT nombre FROM mascotas WHERE id_mascota = " . $_POST['id_mascota'] . "");
@@ -63,8 +61,8 @@ if (!empty($_POST['id_mascota']) && !empty($_POST['asunto']) && !empty($_POST['f
                             <div class="col-sm-5">
                                 <select class="form-select" name="asunto" required>
                                     <option disabled selected value>Asunto</option>
-                                    <?php foreach ($asunto as $row) : ?>
-                                        <option value="<?php echo $row['especialidad'] ?>"><?php echo $row['especialidad'] ?></option>
+                                    <?php foreach ($maniobras as $row) : ?>
+                                        <option value="<?= $row ?>"><?= $row ?></option>
                                     <?php endforeach ?>
                                 </select>
                             </div>

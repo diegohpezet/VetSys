@@ -1,5 +1,6 @@
 <?php
 include("div/connect.php");
+include("div/variables.php");
 
 $data = $_GET['datos_mascota'];
 
@@ -8,7 +9,6 @@ $stmt->execute();
 $results = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $title = $results["nombre"];
-
 ?>
 
 <head>
@@ -24,9 +24,91 @@ $title = $results["nombre"];
 
     <title>Fichas | MedSys</title>
 </head>
+
 <body>
+    <!--Hacer form-->
     <?php include("div/header.php") ?>
-    <div class="container mt-5">
-        <h3>Nueva ficha para <?= $title ?></h3>
-    </div>
+    <div class="container">
+        <div class="card card-4 mt-5 shadow">
+            <div class="card-header text-light" style="background: #c44dff">
+                <h3>Nueva ficha para <?= $title ?></h3>
+            </div>
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="fechaInput">Fecha</label>
+                            <input type="date" class="form-control" id="fechaInput" value="<?= date("Y-m-d"); ?>">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="especialidadInput">Maniobra</label>
+                            <select class="form-select" id="especialidadInput" required>
+                                <option disabled selected value>Seleccione...</option>
+                                <?php foreach ($maniobras as $row) : ?>
+                                    <option value="<?= $row ?>"><?= $row ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="descInput">Descripción</label>
+                            <textarea class="form-control" id="descInput" placeholder="Informe de la visita..." rows=5></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="estudiosInput">Resultado de estudios complementarios</label>
+                            <input type="text" class="form-control" id="estudiosInput">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="diagInput">Diagnóstico / DX Presuntivo</label>
+                            <input type="text" class="form-control" id="diagInput">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="tratamientoInput">Tratamiento</label>
+                            <input type="text" class="form-control" id="tratamientoInput">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="indicacionesInput">Indicaciones</label>
+                            <select class="form-control" id="indicacionesInput">
+                                <option disabled selected value>Seleccione...</option>
+                                <optgroup label="Estudios">
+                                    <?php foreach ($estudios as $row) : ?>
+                                        <option value="<?= $row ?>"><?= $row ?></option>
+                                    <?php endforeach; ?>
+                                </optgroup>
+                                <optgroup label="Estudios - Especialistas">
+                                    <?php foreach ($estudios_especialistas as $row) : ?>
+                                        <option value="<?= $row ?>"><?= $row ?></option>
+                                    <?php endforeach; ?>
+                                </optgroup>
+                                <optgroup label="Derivaciones">
+                                    <?php foreach ($derivaciones as $row) : ?>
+                                        <option value="<?= $row ?>"><?= $row ?></option>
+                                    <?php endforeach; ?>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="mt-3 w-3 btn text-light" value="Agregar ficha" style="background: #c44dff">
+            </div>
+        </div>
 </body>

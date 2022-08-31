@@ -1,5 +1,5 @@
 <?php if ($user['status'] == 0) : ?>
-    <ul class="nav justify-content-center bg-primary text-light">
+    <ul class="nav justify-content-center text-light" style="background-color: #c44dff">
         <li class="nav-item">
             <a><i class="fa-brands fa-whatsapp"></i> +54 9 11 6165-5190</a>
         </li>
@@ -33,15 +33,7 @@
         </div>
     </nav>
 <?php else : ?>
-    <ul class="nav justify-content-center bg-primary text-light">
-        <li class="nav-item">
-            <a><i class="fa-brands fa-whatsapp"></i> +54 9 11 6165-5190</a>
-        </li>
-        <li class="nav-item">
-            <a><i class="fa-solid fa-at"></i> placzekpatricia@gmail.com</a>
-        </li>
-    </ul>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light shadow">
         <div class="container-fluid">
             <a class="navbar-brand" href="medsys.php" style="font-size: 30px;">Vetsys</a>
             <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">

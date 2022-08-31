@@ -110,7 +110,7 @@ if ('modificarPeso') {
     <?php include("div/header.php") ?>
 
     <!--Veterinario-->
-    <div class="container mt-3 ">
+    <div class="container mt-5 ">
         <form action="pacientes.php" method="get">
             <select class="select-box" name="datos_mascota" onchange="this.form.submit()" required>
                 <option selected value>Seleccione una mascota...</option>

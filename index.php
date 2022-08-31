@@ -227,7 +227,7 @@ if (!empty($_POST['email']) && !empty($_POST['pass']) && !empty($_POST['dni'])) 
                 <input type="number" style="margin:5px;" class="form-control" name="dni" placeholder="DNI" required>
               </div>
               <div class="col">
-                <input type="text" style="margin:5px;" class="form-control" name="email" placeholder="Correo" required>
+                <input type="email" style="margin:5px;" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Correo" required>
               </div>
             </div>
             <div class="row">
