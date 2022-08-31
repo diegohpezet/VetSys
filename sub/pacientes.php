@@ -25,25 +25,25 @@ if (isset($_GET['datos_mascota'])) {
         $mascota = $results;
     }
 
-    if ($mascota['especie'] == 'Perro'){
+    if ($mascota['especie'] == 'Perro') {
         $stmt = $conn->prepare("SELECT * FROM razas_perros");
         $stmt->execute();
         $razas_perros = $stmt->fetchAll();
-        
+
         $razas = null;
-        
+
         if (is_countable($razas_perros)) {
             if (count($razas_perros) != 0) {
                 $razas = $razas_perros;
             }
         }
-    } else if($mascota['especie'] == 'Gato') {
+    } else if ($mascota['especie'] == 'Gato') {
         $stmt = $conn->prepare("SELECT * FROM razas_gatos");
         $stmt->execute();
         $razas_gatos = $stmt->fetchAll();
-        
+
         $razas = null;
-        
+
         if (is_countable($razas_gatos)) {
             if (count($razas_gatos) != 0) {
                 $razas = $razas_gatos;
@@ -63,7 +63,7 @@ if ('cargarDatos') {
             `etapa` = :etapa
       WHERE `id_mascota` = :id
       ";
-// UPDATE mascotas set raza = COALESCE($_POST['raza'], raza)
+        // UPDATE mascotas set raza = COALESCE($_POST['raza'], raza)
         $statement = $conn->prepare($sql);
         $statement->bindValue(":raza", $_POST['raza']);
         $statement->bindValue(":peso", $_POST['peso']);
@@ -157,12 +157,12 @@ if ('modificarPeso') {
                     <div class='form-group row'>
                         <div>
                             Raza: <select id="select_box" name='raza' required>
-                                    <option value="" disabled selected>Seleccione la raza</option>
-                                    <option value="Mestizo">Mestizo</option>
-                                    <?php foreach ($razas as $row) : ?>
-                                        <option value="<?php echo $row['raza'] ?>"><?php echo $row['raza']?></option>
-                                    <?php endforeach ?>
-                                </select>
+                                <option value="" disabled selected>Seleccione la raza</option>
+                                <option value="Mestizo">Mestizo</option>
+                                <?php foreach ($razas as $row) : ?>
+                                    <option value="<?php echo $row['raza'] ?>"><?php echo $row['raza'] ?></option>
+                                <?php endforeach ?>
+                            </select>
                         </div>
                         <div class='col col-xs-3 m-2'>
                             Peso: <input class='input-sm' type='number' name='peso' required>
@@ -171,48 +171,54 @@ if ('modificarPeso') {
                             Etapa: <input class='input-sm' type='text' name='etapa' required>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center mt-3">
+                    <div class="d-flex justify-content-center my-3">
                         <input class="btn btn-primary" type="submit" name="cargarDatos">
                     </div>
                 </form>
-
-                <hr>
             <?php endif; ?>
         </div>
     <?php endif; ?>
     <!--Informes de las visitas-->
     <?php if (isset($_GET['datos_mascota'])) : ?>
-        <div class="container mt-3 border">
-            <?php
-            //No me deja ordenar (asc)
-            $stmt = $conn->prepare("SELECT * FROM fichas WHERE id_mascota = " . $mascota['id_mascota'] . " ORDER BY id_ficha ASC");
-            $stmt->execute();
-            $results_fichas = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $ficha = null;
-            if ($results_fichas) {
-                if (count($results_fichas) > 0) {
-                    $ficha = $results_fichas;
-                }
+        <?php
+        //No me deja ordenar (asc)
+        $stmt = $conn->prepare("SELECT * FROM fichas WHERE id_mascota = " . $mascota['id_mascota'] . " ORDER BY fecha ASC LIMIT 1");
+        $stmt->execute();
+        $results_fichas = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $ficha = null;
+        if ($results_fichas) {
+            if (count($results_fichas) > 0) {
+                $ficha = $results_fichas;
             }
-            ?>
-            <?php if ($ficha) : ?>
+        }
+        ?>
+        <?php if ($ficha) : ?>
+            <div class="container mt-3 p-3 border">
                 <div class="h3">Ultima Visita: <?php echo $ficha['fecha']; ?></div>
                 <div class="p"><b><i><?php echo $ficha['especialidad'] ?></i></b></div>
+                <div class="p"><i>Descripción de la visita: </i><?= $ficha['descripcion'] ?></div>
                 <div class="p"><i>Tratamiento: </i><?php echo $ficha['tratamiento'] ?></div>
                 <?php if ($ficha['receta']) : ?>
                     <div class="p"><i>Receta: </i><?php echo $ficha['receta']; ?></div>
                 <?php endif; ?>
-            <?php endif; ?>
-        </div>
+            </div>
+            <div class="container mt-3 d-flex justify-content-end">
+                <a class="btn btn-primary mx-3" href="fichas.php?datos_mascota=<?= $mascota['id_mascota'] ?>">Nueva Ficha</a>
+                <a class="btn btn-secondary" href="fichas_Display.php?datos_mascota=<?= $mascota['id_mascota'] ?>">Ver más fichas</a>
+            </div>
+        <?php endif; ?>
+
     <?php endif; ?>
 </body>
+
 </html>
 
 <script>
-  $(document).ready(function () {
-      $('select').selectize({
-          sortField: 'text'
-      });
-  });
+    $(document).ready(function() {
+        $('select').selectize({
+            sortField: 'text'
+        });
+    });
 </script>

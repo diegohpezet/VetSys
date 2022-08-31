@@ -56,11 +56,16 @@ if (!empty($_POST['asunto']) && !empty($_POST['id_mascota']) && !empty($_POST['f
     $row = $conn->prepare("SELECT nombre FROM mascotas WHERE id_mascota = ".$_POST['id_mascota']."");
     $row->execute();
     $nombre = $row->fetchColumn();
+    $row = $conn->prepare("SELECT dueño FROM mascotas WHERE id_mascota = ".$_POST['id_mascota']."");
+    $row->execute();
+    $cliente = $row->fetchColumn();
     $message = '';
-    $sql = "INSERT INTO turnos (dni_cliente,asunto,id_mascota,mascota,fecha) VALUES (:dni_cliente,:asunto,:id_mascota,:mascota,:fecha) ";
+    $sql = "INSERT INTO turnos (title,dni_cliente,cliente,asunto,id_mascota,mascota,status,start) VALUES (:title,:dni_cliente,:cliente,:asunto,:id_mascota,:mascota,'Confirmado',:fecha) ";
     // UPDATE mascotas set raza = COALESCE($_POST['raza'], raza)
     $stmt = $conn->prepare($sql);
+    $stmt->bindValue(':title', $nombre ." | ". $_POST['asunto']);
     $stmt->bindValue(':dni_cliente', $_POST['id_dueño']);
+    $stmt->bindValue(':cliente', $cliente);
     $stmt->bindValue(':id_mascota', $_POST['id_mascota']);
     $stmt->bindValue(':asunto', $_POST['asunto']);
     $stmt->bindValue(':mascota', $nombre);

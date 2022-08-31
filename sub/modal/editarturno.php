@@ -1,26 +1,10 @@
-<!-- <Select> de cambiar fecha */ -->
-<?php
-$row = $conn->prepare("SELECT * FROM turnos WHERE dni_cliente=:dni");
-$row->bindParam('dni', $user['dni']);
-$row->execute();
-$id = $row->fetchAll();
-
-
-if (isset($_POST['modificarFecha'])) {
-    if (!empty($_POST['nro_Turno']) && !empty($_POST['fecha'])) {
-        $stmt = $conn->prepare("UPDATE turnos SET status='Pendiente', start=:fecha WHERE id=" . $_POST['nro_Turno'] . "");
-        $stmt->bindParam(':fecha', $_POST['fecha']);
-        $stmt->execute();
-    }
-}
-?>
-<!--Modificar Fecha Modal-->
+<!--Editar turno Modal-->
 <div class="modal fade" id="modalModificar">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h3 style="padding: 0px;margin: 5px;">Solicitar Cambio de Fecha</h3>
+                    <h3 style="padding: 0px;margin: 5px;">Editar turno</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
@@ -34,7 +18,7 @@ if (isset($_POST['modificarFecha'])) {
                                     <select class="form-select" name="nro_Turno" required>
                                         <option disabled selected value>N° de turno</option>
                                         <?php foreach ($id as $row) : ?>
-                                            <option value="<?php echo $row['id'] ?>"><?php echo $row['id']. ' | '.$row['mascota'] ?></option>
+                                            <option value="<?php echo $row['nro_Turno'] ?>"><?php echo $row['nro_Turno'] ?></option>
                                         <?php endforeach ?>
                                     </select>
                                 </div>

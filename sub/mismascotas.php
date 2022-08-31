@@ -54,7 +54,7 @@ if (is_countable($results_mascotas)) {
         <div class="container" id="misturnos">
             <div class="container mt-3">
                 <h2>Mis Mascotas:</h2>
-                <button type="button" style="margin: 0; padding:0;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalMascota">
+                <button type="button" class="btn btn-primary p-1" data-bs-toggle="modal" data-bs-target="#modalMascota">
                     Añadir Mascota
                 </button>
                 <table class="table">
