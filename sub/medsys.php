@@ -4,7 +4,7 @@ include('modal/sacarturno.php');
 include('modal/modificarfecha.php');
 
 if (!isset($_SESSION['user_dni'])) {
-    Header("Location: /sub/index.php");
+    Header("Location: /sub/login.php");
 }
 
 /* Display de datos */
