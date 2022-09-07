@@ -63,9 +63,10 @@ Add notes about how to use the system.
 
 ## Desarrollado con <a name = "built_using"></a>
 - [PHPmyAdmin](https://www.phpmyadmin.net/) - Base de datos
-- [PHP](https://expressjs.com/) - Estructura 
-- [Javascript](https://vuejs.org/) - Funcionalidades
-- [CSS](https://nodejs.org/en/) - Estetica
+- [PHP](https://www.php.net/) - Estructura 
+- [HTML](https://developer.mozilla.org/es/docs/Web/HTML) - Estructura web
+- [Javascript](https://www.javascript.com/) - Funcionalidades
+- [CSS](https://developer.mozilla.org/es/docs/Web/CSS) - Estetica
 
 
 ## Equipo <a name = "authors"></a>
