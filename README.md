@@ -26,7 +26,7 @@
 - [Desarrollado con](#built_using)
 - [Equipo](#authors)
 
-##  Introduccion <a name = "about"></a>
+## Introduccion <a name = "about"></a>
 Proyecto creado para la materia de Modelos y Sistemas con el fin de ser utilizado por una veterinaria.
 
 ##  Empezando <a name = "getting_started"></a>
@@ -53,7 +53,7 @@ until finished
 ```
 
 ##  Uso <a name="usage"></a>
-Add notes about how to use the system.
+Como usar el sistema
 (Linkear el manual de usuario)
 
 
