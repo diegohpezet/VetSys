@@ -1,9 +1,10 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://imgur.com/aDk5ZyL" alt="Project logo"></a>
+ <img width=350px height=200px src="https://imgur.com/aDk5ZyL.png" alt="Project logo"></a>
+</p>
+<h1 align="center">Sistema Veterinario</h1>
 </p>
 
-<h3 align="center">VetSys</h3>
 
 <div align="center">
 
@@ -14,10 +15,7 @@
 
 </div>
 
----
 
-<p align="center"> Sistema de veterinario completo
-    <br> 
 </p>
 
 ## 📝 Tabla de contenidos
@@ -44,13 +42,11 @@ Give examples
 ### Instalacion <a name = "deployment"></a>
 Como desplegar la pagina paso por paso.
 
-Say what the step will be
 
 ```
 Give the example
 ```
 
-And repeat
 
 ```
 until finished
@@ -76,6 +72,6 @@ Add notes about how to use the system.
 - [Correia Marcos](https://github.com/Elmuri) - Programacion y modelado
 
 ##  Reconocimientos <a name = "acknowledgement"></a>
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- Codigo de referencia
+- Ideas externas
+- Fuentes de inspiracion
