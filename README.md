@@ -8,9 +8,9 @@
 
 <div align="center">
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/diegohpezet/MedSys/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+  [![Status](https://img.shields.io/badge/status-active-success.svg?style=for-the-badge&logo=GitHub)]() 
+ [![GitHub Issues](https://img.shields.io/bitbucket/issues-raw/lincNx/OlimpiadasDeProgramacion?logo=GitHub&style=for-the-badge)](https://github.com/diegohpezet/MedSys/issues)
+ [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
