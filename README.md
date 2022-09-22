@@ -10,8 +10,6 @@
 
   [![Status](https://img.shields.io/badge/status-active-success.svg?style=for-the-badge&logo=GitHub)]() 
  [![GitHub Issues](https://img.shields.io/bitbucket/issues-raw/lincNx/OlimpiadasDeProgramacion?logo=GitHub&style=for-the-badge)](https://github.com/diegohpezet/MedSys/issues)
- [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
@@ -58,11 +56,11 @@ Como usar el sistema
 
 
 ## Desarrollado con <a name = "built_using"></a>
-- [PHPmyAdmin](https://www.phpmyadmin.net/) - Base de datos
-- [PHP](https://www.php.net/) - Estructura 
-- [HTML](https://developer.mozilla.org/es/docs/Web/HTML) - Estructura web
-- [Javascript](https://www.javascript.com/) - Funcionalidades
-- [CSS](https://developer.mozilla.org/es/docs/Web/CSS) - Estetica
+- ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) - Base de datos
+- ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) - Estructura 
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) - Estructura web
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) - Funcionalidades
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) - Estetica
 
 
 ## Equipo <a name = "authors"></a>
