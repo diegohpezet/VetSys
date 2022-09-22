@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=350px height=200px src="https://imgur.com/aDk5ZyL.png" alt="Project logo"></a>
+ <img width=993px height=103px src="https://imgur.com/yZciPnr.png" alt="Project logo"></a>
 </p>
 <h1 align="center">Sistema Veterinario</h1>
 </p>
