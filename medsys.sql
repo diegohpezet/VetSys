@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-08-2022 a las 02:28:26
+-- Tiempo de generación: 30-09-2022 a las 01:22:48
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.4
 
@@ -24,26 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `especialidades`
---
-
-CREATE TABLE `especialidades` (
-  `especialidad` varchar(200) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `especialidades`
---
-
-INSERT INTO `especialidades` (`especialidad`) VALUES
-('Control'),
-('Radiografia'),
-('Castración'),
-('Cirugía');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `fichas`
 --
 
@@ -52,18 +32,20 @@ CREATE TABLE `fichas` (
   `id_mascota` int(4) NOT NULL,
   `mascota` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `fecha` date NOT NULL,
-  `descripcion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `especialidad` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  `tratamiento` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  `receta` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL
+  `maniobra` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `estudios_complementarios` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `diagnóstico` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tratamiento` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `indicaciones` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `fichas`
 --
 
-INSERT INTO `fichas` (`id_ficha`, `id_mascota`, `mascota`, `fecha`, `descripcion`, `especialidad`, `tratamiento`, `receta`) VALUES
-(1, 3, 'Gato', '2022-05-18', 'Descripción', 'Castración', 'Castración', 'Paracetamol');
+INSERT INTO `fichas` (`id_ficha`, `id_mascota`, `mascota`, `fecha`, `maniobra`, `descripcion`, `estudios_complementarios`, `diagnóstico`, `tratamiento`, `indicaciones`) VALUES
+(1, 3, 'Gato', '2022-05-18', NULL, 'Descripción', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -568,11 +550,14 @@ CREATE TABLE `turnos` (
 --
 
 INSERT INTO `turnos` (`id`, `title`, `dni_cliente`, `cliente`, `asunto`, `id_mascota`, `mascota`, `status`, `start`, `domicilio`) VALUES
-(31, 'Yacko | Castración', 45031729, 'Diego Pezet', 'Castración', 1, 'Yacko', 'Confirmado', '2022-08-31', ''),
-(32, 'Fabri | Castración', 45297893, 'Brisa de la Cerda', 'Castración', 2, 'Fabri', 'Confirmado', '2022-08-20', ''),
+(31, 'Yacko | Consulta', 45031729, 'Diego Pezet', 'Consulta', 1, 'Yacko', 'Confirmado', '2022-09-06', ''),
+(32, 'Fabri | Limpieza quirúrgica de heridas', 45297893, 'Brisa de la Cerda', 'Limpieza quirúrgica de heridas', 2, 'Fabri', 'Confirmado', '2022-08-20', ''),
 (33, 'Yacko | Control', 45031729, 'Diego Pezet', 'Control', 1, 'Yacko', 'Cancelado', '2022-08-30', ''),
-(34, 'Yacko | Radiografia', 45031729, 'Diego Pezet', 'Radiografia', 1, 'Yacko', 'Confirmado', '2022-08-25', '25 bis N°517'),
-(35, 'Yacko | Control', 45031729, 'Diego Pezet', 'Control', 1, 'Yacko', 'Cancelado', '2022-08-26', '');
+(34, 'Yacko | Ovarioectomía', 45031729, 'Diego Pezet', 'Ovarioectomía', 1, 'Yacko', 'Confirmado', '2022-09-27', '25 bis N°517'),
+(35, 'Yacko | Control', 45031729, 'Diego Pezet', 'Control', 1, 'Yacko', 'Cancelado', '2022-08-26', ''),
+(36, 'Yacko | Control postcx', 45031729, 'Diego Pezet', 'Control postcx', 1, 'Yacko', 'Confirmado', '2022-11-15', ''),
+(37, 'Yacko | Control general', 45031729, 'Diego Pezet', 'Control general', 1, 'Yacko', 'Confirmado', '2022-09-29', ''),
+(38, 'Yacko | Vacunación', 45031729, 'Diego Pezet', 'Vacunación', 1, 'Yacko', 'Confirmado', '2022-09-30', '');
 
 -- --------------------------------------------------------
 
@@ -583,7 +568,7 @@ INSERT INTO `turnos` (`id`, `title`, `dni_cliente`, `cliente`, `asunto`, `id_mas
 CREATE TABLE `user` (
   `dni` int(8) NOT NULL,
   `email` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
-  `pass` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `pass` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `nombre` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
   `apellido` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
   `telefono` int(10) NOT NULL,
@@ -599,9 +584,9 @@ INSERT INTO `user` (`dni`, `email`, `pass`, `nombre`, `apellido`, `telefono`, `d
 (456, 'lukitas@gmail.com', '202cb962ac59075b964b', 'Lucas', 'Santacruz', 116542312, '', 0),
 (999, 'randomuser@gmail.com', '202cb962ac59075b964b', 'Random', 'User', 999, 'Random Street 123', 0),
 (12345, 'fabrigei@jajaxd.com', '202cb962ac59075b964b', 'Fabri', 'Futryk', 111111111, '', 0),
-(12345678, 'patri@gmail.com', '202cb962ac59075b964b', 'Patricia', 'Placzek', 1234567890, '', 1),
+(12345678, 'patri@gmail.com', '$2y$10$kpNFUXD8zYTIr/mkrIQxX.KUVxK123/LVy159Pwsj6G6PsBQux64C', 'Patricia', 'Placzek', 1234567890, '', 1),
 (27192677, 'placzekgaby@gmail.com', '202cb962ac59075b964b', 'Gabriela', 'Placzek', 1112121212, '', 0),
-(45031729, 'diegoxd@gmail.com', '202cb962ac59075b964b', 'Diego', 'Pezet', 12345678, '', 0),
+(45031729, 'diegoxd@gmail.com', '$2y$10$kpNFUXD8zYTIr/mkrIQxX.KUVxK123/LVy159Pwsj6G6PsBQux64C', 'Diego', 'Pezet', 12345678, '', 0),
 (45297893, 'brisa@gmail.com', '202cb962ac59075b964b', 'Brisa', 'de la Cerda', 12345678, '', 0);
 
 --
@@ -652,7 +637,7 @@ ALTER TABLE `mascotas`
 -- AUTO_INCREMENT de la tabla `turnos`
 --
 ALTER TABLE `turnos`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

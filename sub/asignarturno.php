@@ -1,5 +1,6 @@
 <?php
 include("div/connect.php");
+include("div/variables.php");
 
 $stmt = $conn->prepare("SELECT * FROM user WHERE status = 0 ORDER BY nombre desc");
 $stmt->execute();
@@ -13,17 +14,6 @@ if (is_countable($results_clientes)) {
     }
 }
 
-$stmt = $conn->prepare("SELECT * FROM especialidades ORDER BY especialidad desc");
-$stmt->execute();
-$results_especialidades = $stmt->fetchAll();
-
-$especialidades = null;
-
-if (is_countable($results_especialidades)) {
-    if (count($results_especialidades) != 0) {
-        $especialidades = $results_especialidades;
-    }
-}
 
 if (isset($_GET['datos_user'])) {
     $stmt = $conn->prepare("SELECT * FROM user WHERE dni = :dni");
@@ -118,8 +108,8 @@ if (!empty($_POST['asunto']) && !empty($_POST['id_mascota']) && !empty($_POST['f
                 </select></i>
                 <i>Especialidad: <select name="asunto" required>
                     <option value disabled selected>Seleccione</option>
-                    <?php foreach ($especialidades as $row) : ?>
-                    <option value="<?php echo $row['especialidad'] ?>"><?php echo $row['especialidad'] ?></option>
+                    <?php foreach ($maniobras as $row) : ?>
+                    <option value="<?php echo $row ?>"><?php echo $row ?></option>
                 <?php endforeach ?>                    
                 </select></i>
                 <i>Fecha: <input type="date" name="fecha" class="input" required></i>

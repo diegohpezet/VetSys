@@ -49,7 +49,7 @@ if (isset($_POST['registro'])) {
         $stmt->bindParam(":tel", $_POST['tel']);
         $stmt->bindParam(':domicilio', $_POST['domicilio']);
 
-        // verificacion para que no aya datos repetidos
+        // Verificacion para que no haya datos repetidos
         $usuarios = $conn->prepare("SELECT * FROM user where 1");
         $usuarios->execute();
         $result_users = $usuarios->fetchAll();
@@ -161,7 +161,7 @@ if (isset($_POST['registro'])) {
                                         <input type="email" required name="email" class="form-control" placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="domicilio" class="form-control" placeholder="Domicilio">
+                                        <input type="text" required name="domicilio" class="form-control" placeholder="Domicilio">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" required name="password" class="form-control" placeholder="Contraseña">

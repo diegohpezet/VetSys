@@ -4,7 +4,7 @@ include('modal/sacarturno.php');
 include('modal/modificarfecha.php');
 
 if (!isset($_SESSION['user_dni'])) {
-    Header("Location: /sub/login.php");
+    Header("Location: /sub/index.php");
 }
 
 /* Display de datos */
@@ -207,7 +207,7 @@ if (isset($_REQUEST['aceptar'])) {
                                             <td><?= $row['mascota'] ?></td>
                                             <td><?= $row['asunto'] ?></td>
                                             <td><?= $row['domicilio'] ?></td>
-                                            <td><a href="">Atender</a></td>
+                                            <td><a href="fichas.php?datos_mascota=<?= $row['id_mascota'] ?>">Atender</a></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
