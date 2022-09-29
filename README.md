@@ -32,11 +32,12 @@ Estas instrucciones te generaran una copia del proyecto funcional en tu maquina 
 
 ### Prerequisitos
 Que necesitas tener instalado en tu maquina antes de trabajar con la pagina.
-|    | 
-|----------|
-| XAMPP    | 
-| Internet |
-| TODO     | 
+
+| **Requisitos** |
+|:--------------:|
+|      XAMPP     |
+|    Internet    |
+|      TODO      |
 
 ### Instalacion <a name = "deployment"></a>
 Como desplegar la pagina paso por paso.
