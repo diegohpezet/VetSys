@@ -10,17 +10,24 @@ $results = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $title = $results["nombre"];
 
-//NO ANDA
 if ($_POST) {
-    $data = [$id, $title, $_POST['fecha'], $_POST['maniobra'], $_POST['descripcion'], $_POST['estudios_complementarios'], $_POST['diagnostico'], $_POST['tratamiento'], $_POST['indicaciones']];
-    $sql = "INSERT INTO fichas (id_mascota, mascota, fecha, maniobra, descripcion, estudios_complementarios, diagnóstico, tratamiento, indicaciones) VALUES ($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7],$data[8])";
+    $sql = "INSERT INTO fichas VALUES (NULL, $id, :mascota, :fecha, :maniobra, :descripcion, :estudios_complementarios, :diagnostico, :tratamiento, :indicaciones)";
     $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':mascota',$title);
+    $stmt->bindParam(':fecha',$_POST['fecha']);
+    $stmt->bindParam(':maniobra',$_POST['maniobra']);
+    $stmt->bindParam(':descripcion',$_POST['descripcion']);
+    $stmt->bindParam(':estudios_complementarios',$_POST['estudios_complementarios']);
+    $stmt->bindParam(':diagnostico',$_POST['diagnostico']);
+    $stmt->bindParam(':tratamiento',$_POST['tratamiento']);
+    $stmt->bindParam(':indicaciones',$_POST['indicaciones']);
 
     if ($stmt->execute()) {
-        header('Location: fichas_Display?datos_mascota=' . $id . '');
+        header('Location: fichas_Display.php?datos_mascota=' . $id . '');
     } else {
         echo $sql;
     }
+}
 }
 ?>
 
