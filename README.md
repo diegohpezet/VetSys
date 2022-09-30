@@ -81,8 +81,14 @@ Como desplegar la pagina paso por paso.
  ![Step8c](https://imgur.com/jShQV0K.png)
 
 9. `Abrimos la aplicacion dirigiendonos al siguiente directorio`
+  ```
+  http://localhost/Medsys-main/index.php
+
+  ```
 
  ![Step9](https://imgur.com/vidj0Hn.png)
+
+ 
 ##  Uso <a name="usage"></a>
 Como usar el sistema
 (Linkear el manual de usuario)
