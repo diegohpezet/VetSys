@@ -43,14 +43,7 @@ Que necesitas tener instalado en tu maquina antes de trabajar con la pagina.
 Como desplegar la pagina paso por paso.
 
 
-```
-Give the example
-```
-
-
-```
-until finished
-```
+![Step1](https://imgur.com/YnZeCKs.png)
 
 ##  Uso <a name="usage"></a>
 Como usar el sistema
