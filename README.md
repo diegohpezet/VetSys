@@ -42,8 +42,9 @@ Que necesitas tener instalado en tu maquina antes de trabajar con la pagina.
 ### Instalacion <a name = "deployment"></a>
 Como desplegar la pagina paso por paso.
 
+1. `Descargamos la aplicacion desde el repositorio`
 
-![Step1](https://imgur.com/YnZeCKs.png)
+  ![Step1](https://imgur.com/YnZeCKs.png)
 
 ##  Uso <a name="usage"></a>
 Como usar el sistema
