@@ -38,9 +38,7 @@ Que necesitas tener instalado en tu maquina antes de trabajar con la pagina.
 |      XAMPP     |
 |    Internet    |
 |      TODO      |
-
-Negro pelotudo 
-
+ 
 ### Instalacion <a name = "deployment"></a>
 Como desplegar la pagina paso por paso.
 
