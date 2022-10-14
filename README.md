@@ -101,12 +101,21 @@ Como usar el sistema
 
 
 ## Equipo <a name = "authors"></a>
-- [Diego Pezet](https://github.com/kylelobo) - Idea inicial y programacion
-- [Santacruz Lucas](https://github.com/lincNx) - Documentacion y desarrollo
-- [De la cerda Brisa](https://github.com/Brisa-dlC) - Diseño y desarrollo
-- [Correia Marcos](https://github.com/Elmuri) - Programacion y modelado
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/diegohpezet"><img src="https://avatars.githubusercontent.com/u/74683374?v=4?s=100" width="100px;" alt="Diego Pezet"/><br /><sub><b>Pezet Diego</b></sub></a><br /><a href="#design-austincondiff" title="Design">🎨</a> <a href="https://github.com/CodeEditApp/CodeEdit/commits?author=austincondiff" title="Code">💻</a></td>
+      <td align="center"><a href="http://lukaspistrol.com"><img src="https://avatars.githubusercontent.com/u/56304084?v=4?s=100" width="100px;" alt="Lucas Santacruz"/><br /><sub><b>Santacruz Lucas</b></sub></a><br /><a href="#infra-lukepistrol" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/CodeEditApp/CodeEdit/commits?author=lukepistrol" title="Tests">⚠️</a> <a href="https://github.com/CodeEditApp/CodeEdit/commits?author=lukepistrol" title="Code">💻</a></td>  
+      <td align="center"><a href="https://github.com/Brisa-dlC"><img src="https://avatars.githubusercontent.com/u/101837577?v=4?s=100" width="100px;" alt="Pavel Kasila"/><br /><sub><b>De la cerda Brisa</b></sub></a><br /><a href="#infra-pkasila" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/CodeEditApp/CodeEdit/commits?author=pkasila" title="Tests">⚠️</a> <a href="https://github.com/CodeEditApp/CodeEdit/commits?author=pkasila" title="Code">💻</a></td> 
+      <td align="center"><a href="https://github.com/Elmuri"><img src="https://avatars.githubusercontent.com/u/101751763?v=4?s=100" width="100px;" alt="Marco Carnevali"/><br /><sub><b>Correia Marcos</b></sub></a><br /><a href="#infra-MarcoCarnevali" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/CodeEditApp/CodeEdit/commits?author=MarcoCarnevali" title="Tests">⚠️</a> <a href="https://github.com/CodeEditApp/CodeEdit/commits?author=MarcoCarnevali" title="Code">💻</a></td>     
+    </tr>
+  </tbody>
+</table>
 
 ##  Reconocimientos <a name = "acknowledgement"></a>
 - Codigo de referencia
 - Ideas externas
 - Fuentes de inspiracion
+
+
