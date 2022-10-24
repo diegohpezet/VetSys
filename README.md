@@ -2,7 +2,7 @@
   <a href="" rel="noopener">
  <img width=650px height=250px src="https://imgur.com/TT63dLR.png" alt="Project logo"></a>
 </p>
-<h1 align="center">Sistema Veterinario</h1>
+
 </p>
 
 
