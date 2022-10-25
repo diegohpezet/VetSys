@@ -24,7 +24,7 @@
 - [Desarrollado con](#built_using)
 - [Equipo](#authors)
 
-## Introduccion <a name = "about"></a>
+## Carta de presentacion <a name = "about"></a>
 Proyecto creado para la materia de Modelos y Sistemas con el fin de ser utilizado por una veterinaria.
 
 ##  Empezando <a name = "getting_started"></a>
