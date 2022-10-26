@@ -8,7 +8,7 @@
 - [ ] Resumen ejecutivo (incluyendo las recomendaciones).
 - [ ] Recomendaciones de los analistas de sistemas.
 - [ ] Resumen de la propuesta.
-- [ ]  Alternativas de sistemas (tres o cuatro posibles soluciones).
+- [ ] Alternativas de sistemas (tres o cuatro posibles soluciones).
 
 ## Tareas realizadas
 - [x] Diseño general de la pagina
