@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="VetSys" company="" webLink="http://" view-date="2022-05-23" view-index="0" gantt-divider-location="316" resource-divider-location="300" version="3.2.3230" locale="es_ES">
+    <description/>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Nombre" width="171" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="65" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="64" order="2"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="color.recent">
+            <![CDATA[#0066cc #00cccc #00cc00 #ffff00 #ff9933 #ff3333 #cc33ff #6666ff #66ffff #99ff99]]>
+        </option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nombre" width="210" order="0"/>
+        <field id="1" name="Función" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="25" name="Analisis" color="#8cb6ce" meeting="false" start="2022-05-02" duration="14" complete="0" thirdDate="2022-05-09" thirdDate-constraint="0" expand="true">
+            <depend id="0" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="0" name="Revisión del Gantt" color="#ccccff" meeting="false" start="2022-05-20" duration="1" complete="0" thirdDate="2022-05-12" thirdDate-constraint="0" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" name="Corrección" color="#ffccff" meeting="false" start="2022-05-23" duration="3" complete="0" thirdDate="2022-05-12" thirdDate-constraint="0" expand="true">
+            <depend id="22" type="2" difference="0" hardness="Strong"/>
+            <depend id="31" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="31" name="Diseño de Gráficos" color="#8cb6ce" meeting="false" start="2022-05-26" duration="7" complete="0" thirdDate="2022-05-09" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Diseño y presentación de diagrama de clases y diagrama entidad relacion]]>
+            </notes>
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="22" name="Presentación del Analisis" color="#8cb6ce" meeting="false" start="2022-05-26" duration="7" complete="0" thirdDate="2022-05-09" thirdDate-constraint="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" name="Diseño de prototipo" color="#ffcccc" meeting="false" start="2022-06-06" duration="9" complete="0" thirdDate="2022-05-12" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Trabajar en el aspecto del software y sus funcionalidades
+
+]]>
+            </notes>
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" name="Trabajar en la base de datos" color="#ffffcc" meeting="false" start="2022-06-06" duration="9" complete="0" thirdDate="2022-05-12" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Aportar a la base de datos a la vez que se trabaja en el diseño
+]]>
+            </notes>
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" name="Presentación del primer prototipo" color="#ccffcc" meeting="false" start="2022-06-17" duration="1" complete="0" thirdDate="2022-05-12" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Primera muestra al profesor]]>
+            </notes>
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" name="Correcciones" color="#99ffff" meeting="false" start="2022-06-20" duration="4" complete="0" thirdDate="2022-06-01" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Trabajar un tiempo en las correcciones
+]]>
+            </notes>
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="7" name="Presentación prototipo corregido" color="#9999ff" meeting="false" start="2022-06-24" duration="1" complete="0" thirdDate="2022-06-03" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Presentar al profesor el prototipo con las correcciones]]>
+            </notes>
+            <depend id="8" type="2" difference="0" hardness="Strong"/>
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="8" name="Diseño de segundo prototipo" color="#cc99ff" meeting="false" start="2022-06-27" duration="15" complete="0" thirdDate="2022-06-14" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Trabajar en el diseño de la aplicacion mas a fondo, avanzando en el desarrollo
+]]>
+            </notes>
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="9" name="Trabajar en la base de datos" color="#ff9999" meeting="false" start="2022-06-27" duration="15" complete="0" thirdDate="2022-06-14" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Lo mismo con la base de datos
+]]>
+            </notes>
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" name="Vacaciones de invierno" color="#ffcc99" meeting="false" start="2022-07-18" duration="10" complete="0" thirdDate="2022-06-14" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Usamos las vacaciones de invierno para descansar de la escuela
+]]>
+            </notes>
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="10" name="Presentación segundo prototipo" color="#ffff99" meeting="false" start="2022-08-01" duration="5" complete="0" thirdDate="2022-07-06" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Presentamos el segundo diseño al profesor]]>
+            </notes>
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="11" name="Correcciones segundo prototipo" color="#99ff99" meeting="false" start="2022-08-08" duration="9" complete="0" thirdDate="2022-07-18" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Trabajamos en las correcciones del segundo prototipo]]>
+            </notes>
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="12" name="Presentacion segundo prototipo" color="#66ffff" meeting="false" start="2022-08-19" duration="1" complete="0" thirdDate="2022-07-11" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Presentamos el prototipo corregido al profesor
+]]>
+            </notes>
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="14" name="Semanita de descanso para prepararnos para lo que se viene" color="#6666ff" meeting="false" start="2022-08-22" duration="5" complete="0" thirdDate="2022-08-08" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Una semana de receso con el proyecto]]>
+            </notes>
+            <depend id="13" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="13" name="Diseño de version final" color="#cc33ff" meeting="false" start="2022-08-29" duration="24" complete="0" thirdDate="2022-08-17" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Trabajar en el diseño definitivo del software
+]]>
+            </notes>
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" name="Presentación versión final" color="#ff3333" meeting="false" start="2022-09-30" duration="1" complete="0" thirdDate="2022-09-12" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Presenteamos el ultimo diseño al profesor
+
+]]>
+            </notes>
+            <depend id="16" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="16" name="Correcciones" color="#ff9933" meeting="false" start="2022-10-03" duration="5" complete="0" thirdDate="2022-09-26" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Aplicamos las correcciones al proyecto
+]]>
+            </notes>
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="17" name="Test 1" color="#ffff00" meeting="false" start="2022-10-10" duration="5" complete="0" thirdDate="2022-09-26" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Prueba funcional del software en un entorno real
+]]>
+            </notes>
+            <depend id="18" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="18" name="Mantenimiento y correcciones" color="#00cc00" meeting="false" start="2022-10-17" duration="5" complete="0" thirdDate="2022-09-29" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Checkear el software y corregir posibles errores que hayan sido descubiertos
+]]>
+            </notes>
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="19" name="Test 2" color="#00cccc" meeting="false" start="2022-10-24" duration="5" complete="0" thirdDate="2022-10-11" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Segundo test]]>
+            </notes>
+            <depend id="20" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="20" name="Ultimos retoques" color="#0066cc" meeting="false" start="2022-10-31" duration="5" complete="0" thirdDate="2022-10-17" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Corregir ultimos errores, pulir detalles para que la app este lista]]>
+            </notes>
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="21" name="Lanzamiento de la app" color="#8cb6ce" meeting="false" start="2022-11-07" duration="1" complete="0" thirdDate="2022-10-24" thirdDate-constraint="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
