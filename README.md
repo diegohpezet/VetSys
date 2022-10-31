@@ -32,9 +32,6 @@
 ## 📝 Tabla de contenidos
 - [Introduccion](#about)
 - [Empezando](#getting_started)
-- [Instalacion](#deployment)
-- [Utilizacion](#usage)
-- [Desarrollado con](#built_using)
 - [Equipo](#authors)
 
 ## Carta de presentacion <a name = "about"></a>
@@ -52,58 +49,6 @@ Que necesitas tener instalado en tu maquina antes de trabajar con la pagina.
 |    Internet    |
 |      TODO      |
  
-### Instalacion <a name = "deployment"></a>
-Como desplegar la pagina paso por paso.
-
-1. `Descargamos la aplicacion desde el repositorio`
-
-  ![Step1](https://imgur.com/YnZeCKs.png)
-
-2. `Extraemos el archivo`
-
-  ![Step2](https://imgur.com/QSjziKE.png)
-
-3. `Movemos la carpeta a "C:\xampp\htdocs" (Directorio del programa XAMPP)`
-
-  ![Step3](https://imgur.com/dYYu0SV.png)
-
-4. `Abrimos XAMPP y iniciamos el servidor`
-
-  ![Step4](https://imgur.com/QLBxcG7.png)
-
-5. `Nos dirigimos a el siguiente directorio`
-
-  ![Step5](https://imgur.com/fvRUuc3.png)
-
-6. `Abrimos PHPMyAdmin`
-
-  ![Step6](https://imgur.com/s2Uu9xm.png)
-
-7. `Nos dirigimos a la pestaña "Nueva"`
-
-  ![Step6](https://imgur.com/pDqGcP8.png)
-
-7. `Creamos una base de datos de nombre "medsys"`
-
- ![Step6](https://imgur.com/cfov4UG.png)
-
-8. `Una vez creado importamos la base de datos que se encuentra en la carpeta descargada anteriormente`
-
- ![Step8a](https://imgur.com/XKUnB1H.png)
- ![Step8b](https://imgur.com/N2d1OR3.png)
- ![Step8c](https://imgur.com/jShQV0K.png)
-
-9. `Abrimos la aplicacion dirigiendonos al siguiente directorio`
-  ```
-  http://localhost/Medsys-main/index.php
-  ```
- ![Step9](https://imgur.com/vidj0Hn.png)
-
-
-##  Uso <a name="usage"></a>
-Como usar el sistema
-(Linkear el manual de usuario)
-
 
 ## Desarrollado con <a name = "built_using"></a>
 - ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) - Base de datos
