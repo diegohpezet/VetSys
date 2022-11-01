@@ -29,16 +29,8 @@
 
 </p>
 
-## 📝 Tabla de contenidos
-- [Introduccion](#about)
-- [Empezando](#getting_started)
-- [Equipo](#authors)
-
-## Carta de presentacion <a name = "about"></a>
+## Intro <a name = "about"></a>
 Proyecto creado para la materia de Modelos y Sistemas con el fin de ser utilizado por una veterinaria.
-
-##  Empezando <a name = "getting_started"></a>
-Estas instrucciones te generaran una copia del proyecto funcional en tu maquina local para propositos de desarrollo y evaluacion.
 
 ### Prerequisitos
 Que necesitas tener instalado en tu maquina antes de trabajar con la pagina.
@@ -70,10 +62,5 @@ Que necesitas tener instalado en tu maquina antes de trabajar con la pagina.
     </tr>
   </tbody>
 </table>
-
-##  Reconocimientos <a name = "acknowledgement"></a>
-- Codigo de referencia
-- Ideas externas
-- Fuentes de inspiracion
 
 
