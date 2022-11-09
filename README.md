@@ -20,37 +20,7 @@
 
 <div align="center">
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg?style=for-the-badge&logo=GitHub)]() 
- [![GitHub Issues](https://img.shields.io/bitbucket/issues-raw/lincNx/OlimpiadasDeProgramacion?logo=GitHub&style=for-the-badge)](https://github.com/diegohpezet/MedSys/issues)
-
-</div>
-
-
-
-</p>
-
-## Intro <a name = "about"></a>
-Proyecto creado para la materia de Modelos y Sistemas con el fin de ser utilizado por una veterinaria.
-
-### Prerequisitos
-Que necesitas tener instalado en tu maquina antes de trabajar con la pagina.
-
-| **Requisitos** |
-|:--------------:|
-|      XAMPP     |
-|    Internet    |
-|      TODO      |
- 
-
-## Desarrollado con <a name = "built_using"></a>
-- ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) - Base de datos
-- ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) - Estructura 
-- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) - Estructura web
-- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) - Funcionalidades
-- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) - Estetica
-
-
-## Equipo <a name = "authors"></a>
+<h2> Desarrollado por:<a name = "authors"></a> </h>
 
 <table>
   <tbody>
@@ -63,4 +33,5 @@ Que necesitas tener instalado en tu maquina antes de trabajar con la pagina.
   </tbody>
 </table>
 
+</div>
 
