@@ -20,7 +20,7 @@
 
 <div align="center">
 
-<h2> Desarrollado por:<a name = "authors"></a> </h>
+<h2> Desarrollado por:<a name = "authors"></a> </h2>
 
 <table>
   <tbody>
