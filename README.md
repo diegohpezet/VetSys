@@ -14,6 +14,8 @@
  ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
  ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
  <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='FontAwesome' src='https://img.shields.io/badge/FontAwesome-100000?style=for-the-badge&logo=FontAwesome&logoColor=white&labelColor=09003F&color=09003F'/></a>
+ ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
+ <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='PHP' src='https://img.shields.io/badge/MyADMIN-100000?style=for-the-badge&logo=PHP&logoColor=83597B&labelColor=000000&color=83597B'/></a>
   ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
   
 </div>
