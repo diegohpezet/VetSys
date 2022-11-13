@@ -31,7 +31,7 @@
 ***
 
 **VetSys** se trata de un sistema desarrollado por alumnos de la **EESTN°4 Berazategui** con el objetivo de ser implementado y entregado para una veterinaria. El sistema es capaz de registrar, editar, eliminar y leer turnos correspondientes asi como tambien monitorear historiales de pacientes. Se trata de una herramienta extremadamente versatil para la administracion de registros y turnos.
-Todo el cojunto provee al usuario de una sobria UI facil de entender y utilizar por cualquiera, lo cual vuelve mucho mas amena la experiencia de administrar.
+Todo el conjunto provee al que lo use de una sobria UI facil de entender y utilizar por cualquiera, lo cual vuelve mucho mas amena la experiencia de administrar.
 
 </div>
 
