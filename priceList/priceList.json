@@ -1,0 +1,36 @@
+{
+    "prices": {
+        "consulta" : 3000,
+        "vacunas" : 3000,
+        "eutanasia" : "7000 - 12000",
+        "castraciones": {
+            "chicos" : 6000,
+            "medianos" : 8000,
+            "grandes" : 9500
+        },
+        "desparasitarios": {
+            "pipetas": "450 - 1000",
+            "comprimidos": "600 - 1200",
+            "internos" : "600 - 1200"
+        },
+        "miasis" : 5000,
+        "otohematoma" : 5000,
+        "corte de uñas" : 1000,
+        "vendajes" : 1000,
+        "limpieza quirúrgica": 2000,
+        "limpieza no quirúrgica" : 1000,
+        "sutura de heridas" : 2000,
+        "venta de farmacos" : "600 - 2000",
+        "flutd" : 5000,
+        "cistocentesis" : 4000,
+        "abdominocentesis" : 5000,
+        "muestras laboratorio" : {
+            "sangre" : 3000,
+            "orina" : 1500,
+            "tiroideo_completo" : 5000,
+            "tiroideo_básico" : 4000,
+            "dosaje_fenobarbital" : 3500,
+            "coproparasitológico" : 1500
+        }
+    }
+}
