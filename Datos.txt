@@ -14,7 +14,3 @@ Mascota:(Tía puede llenar)
 	-Utilidad (Mascota/Trabajo)
 ---------------------------
 ¿Que animales suele atender?
-
-
-SELECT mascotas.*, concat(clientes.nombre, " ", clientes.apellido) as "cliente" 
-FROM `mascotas` INNER JOIN `clientes` ON mascotas.dni = clientes.dni

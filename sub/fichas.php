@@ -11,6 +11,11 @@ $results = $stmt->fetch(PDO::FETCH_ASSOC);
 $title = $results["nombre"];
 
 if ($_POST) {
+    //Antes del post borra todo los datos referentes al turno de hoy
+    $sql = "DELETE FROM turnos WHERE DATE(start) = CURDATE() AND mascota = '$title'";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
     $sql = "INSERT INTO fichas VALUES (NULL, $id, :mascota, :fecha, :maniobra, :descripcion, :estudios_complementarios, :diagnostico, :tratamiento, :indicaciones)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':mascota',$title);
@@ -28,20 +33,20 @@ if ($_POST) {
         echo $sql;
     }
 }
-}
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
-
+    <link rel="icon" href="../img/logo.png">
     <title>Fichas | MedSys</title>
 </head>
 

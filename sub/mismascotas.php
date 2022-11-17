@@ -43,6 +43,7 @@ if (is_countable($results_mascotas)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="../bootstrap/js/bootstrap.js"></script>
+    <link rel="icon" href="../img/logo.png">
 
     <title>Mis mascotas | MedSys</title>
 </head>

@@ -7,6 +7,10 @@ if (!isset($_SESSION['user_dni'])) {
     Header("Location: /sub/index.php");
 }
 
+$sql = "DELETE FROM turnos WHERE DATE(start) < CURDATE()";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+
 /* Display de datos */
 if ($user['status'] == 0) {
     $stmt = $conn->prepare("SELECT * FROM turnos WHERE dni_cliente = :dni ORDER BY start");
@@ -77,23 +81,59 @@ if (isset($_REQUEST['aceptar'])) {
     echo "<meta http-equiv='refresh' content='0'>";
 }
 
+/* Borrar turnos confirmados */
+if(array_key_exists('borrarBtn', $_POST)) {
+    borrarTurno();
+}
+
+function borrarTurno() {
+    include("database.php");
+    $sql = "INSERT INTO mascotas (id_dueño, dueño, nombre, especie, sexo) values (
+        " . $_POST['dni_dueño'] . ",
+        '" . $_POST['nombre_dueño'] . "',
+        '" . $_POST['nombre'] . "',
+        '" . $_POST['especie'] . "',
+        '" . $_POST['sexo'] ."'
+        )";
+    $stmt = $conn->prepare($sql);
+    if ($stmt->execute()) {
+        echo "
+        <br>
+        <div class='container border h5'>
+          <p>
+            Mascota agregada con éxito
+          </p>
+        </div>";
+    }
+}
+
+if(isset($_POST['borrar_T'])){
+    $turnosql=$conn->prepare('DELETE FROM `turnos` WHERE `id_mascota`=:id_mascota');
+    $turnosql->bindParam(':id_mascota',$_POST['borrar_T']);
+    if($turnosql->execute()){
+        $mensaje= 'Turno eliminado exitosamente';
+        echo "<meta http-equiv='refresh' content='0'>";
+    }
+}
+
 ?>
-<!DOCTYPE html>
 
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../bootstrap/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="../bootstrap/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src='../fullcalendar/lib/locales/es-us.js'></script>
     <link href='../fullcalendar/lib/main.css' rel='stylesheet' />
     <script src='../fullcalendar/lib/main.js'></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" type='text/css'>
+    
 
     <title>Inicio | VetSys</title>
+    <link rel="icon" href="../img/logo.png">
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -168,7 +208,7 @@ if (isset($_REQUEST['aceptar'])) {
                 </button>
             </div>
             <div class="container">
-                <a class="btn btn-success rounded-pill float-end" href="https://wa.me/1167228164?text=Hola%20Patricia,%20estoy%20interesado/a%20en%20asistencia%20veterinaria."><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                <a class="btn btn-success rounded-pill float-end" href="https://wa.me/5491170167938?text=Hola%20Patricia,%20estoy%20interesado/a%20en%20tus%20servicios%20como%20veterinaria."><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
             </div>
         <?php else : ?>
             <div class="container" id="misturnos">
@@ -290,6 +330,9 @@ if (isset($_REQUEST['aceptar'])) {
                                             <td><?= $row['cliente'] ?></td>
                                             <td><?= $row['mascota'] ?></td>
                                             <td><?= $row['asunto'] ?></td>
+                                            <form action="medsys.php" method="post">
+                                                <td><button class="btn btn-danger" type="submit" name="borrar_T" value="<?php echo $row['id_mascota']; ?>">🗑</button></td>
+                                            </form>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -307,16 +350,13 @@ if (isset($_REQUEST['aceptar'])) {
 
         <?php endif; ?>
 
-        <!--Turnos pendientes-->
-
-        <!--Turnos Confirmados de hoy-->
-
         <!--Calendario-->
         <div class="container">
             <div id="calendar"></div>
         </div>
 
     <?php endif; ?>
+    
 </body>
 
 </html>

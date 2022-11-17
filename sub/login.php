@@ -44,9 +44,9 @@ if (isset($_POST['registro'])) {
         $stmt->bindParam(':email', $_POST['email']);
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $stmt->bindParam(':pass', $password);
-        $stmt->bindParam(":nombre", $_POST['nombre']);
-        $stmt->bindParam(":apellido", $_POST['apellido']);
-        $stmt->bindParam(":tel", $_POST['tel']);
+        $stmt->bindParam(':nombre', $_POST['nombre']);
+        $stmt->bindParam(':apellido', $_POST['apellido']);
+        $stmt->bindParam(':tel', $_POST['tel']);
         $stmt->bindParam(':domicilio', $_POST['domicilio']);
 
         // Verificacion para que no haya datos repetidos
@@ -93,11 +93,12 @@ if (isset($_POST['registro'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login & registro</title>
+    <title>Usuario</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link importance="high" rel="stylesheet" href="../style/login.css">
+    <link rel="icon" href="../img/logo.png">
 </head>
 
 <body>
@@ -138,7 +139,7 @@ if (isset($_POST['registro'])) {
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="text-center">
-                                                    <a href="" tabindex="5" class="forgot-password">olvidaste la
+                                                    <a href="" tabindex="5" class="forgot-password">Olvidaste la
                                                         contraseña?</a>
                                                 </div>
                                             </div>
@@ -176,7 +177,7 @@ if (isset($_POST['registro'])) {
                                         <input type="submit" name="registro" tabindex="4" class="form-control btn btn-register" value="Registrar">
                                     </div>
                                 </form>
-                                <a href="../index.php">volver</a>
+                                <a href="../index.php">Volver</a>
                             </div>
                         </div>
                     </div>

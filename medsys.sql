@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-09-2022 a las 01:22:48
+-- Tiempo de generación: 17-11-2022 a las 02:38:48
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.4
 
@@ -45,7 +45,12 @@ CREATE TABLE `fichas` (
 --
 
 INSERT INTO `fichas` (`id_ficha`, `id_mascota`, `mascota`, `fecha`, `maniobra`, `descripcion`, `estudios_complementarios`, `diagnóstico`, `tratamiento`, `indicaciones`) VALUES
-(1, 3, 'Gato', '2022-05-18', NULL, 'Descripción', '', '', '', '');
+(1, 3, 'Gato', '2022-05-18', 'Control postcx', 'Descripción', '', '', '', ''),
+(2, 2, 'Fabri', '2022-09-30', 'Control postcx', '', '', '', '', NULL),
+(3, 2, 'Fabri', '2022-09-30', 'Control postcx', '', '', '', '', NULL),
+(4, 2, 'Fabri', '2022-09-30', 'Control postcx', '', '', '', '', NULL),
+(5, 1, 'Yacko', '2022-11-15', 'Aplicación de quimioterapicos', 'Hubo una visita', 'Joya', 'Puede ser', '', 'Análisis de orina'),
+(6, 1, 'Yacko', '2022-11-15', 'Control postcx', 'Vino el perro que ladra', 'Joya', 'Joya', 'Si', 'Análisis sanguíneos');
 
 -- --------------------------------------------------------
 
@@ -61,6 +66,10 @@ CREATE TABLE `mascotas` (
   `raza` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
   `peso` float DEFAULT NULL,
   `etapa` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `castrado` varchar(10) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `pelaje` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `temperamento` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `utilidad` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
   `dueño` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `id_dueño` int(8) DEFAULT NULL,
   `ultima_visita` date DEFAULT NULL
@@ -70,11 +79,12 @@ CREATE TABLE `mascotas` (
 -- Volcado de datos para la tabla `mascotas`
 --
 
-INSERT INTO `mascotas` (`id_mascota`, `nombre`, `especie`, `sexo`, `raza`, `peso`, `etapa`, `dueño`, `id_dueño`, `ultima_visita`) VALUES
-(1, 'Yacko', 'Perro', 'Macho', NULL, NULL, NULL, 'Diego Pezet', 45031729, NULL),
-(2, 'Fabri', 'Gato', 'Macho', NULL, NULL, NULL, 'Brisa de la Cerda', 45297893, NULL),
-(3, 'Gato', 'Gato', 'Macho', 'miau miau', 5, 'Adulto', 'Diego Pezet', 45031729, NULL),
-(10, 'SamplePet', 'Perro', 'Macho', 'Akita', 25, 'Adulto', 'Random User', 999, NULL);
+INSERT INTO `mascotas` (`id_mascota`, `nombre`, `especie`, `sexo`, `raza`, `peso`, `etapa`, `castrado`, `pelaje`, `temperamento`, `utilidad`, `dueño`, `id_dueño`, `ultima_visita`) VALUES
+(1, 'Yacko', 'Perro', 'Macho', NULL, NULL, NULL, '', '', '', '', 'Diego Pezet', 45031729, NULL),
+(11, 'SamplePet_2', 'Perro', 'Macho', NULL, NULL, NULL, '', '', '', '', 'Diego Pezet', 45031729, NULL),
+(12, 'Diego', 'Gato', 'Macho', 'Angora turco', 77, 'Adulto', '', '', '', '', 'Diego Pezet', 45031729, NULL),
+(15, 'ola', 'Gato', 'Hembra', NULL, NULL, NULL, '', '', '', '', 'Diego Pezet', 45031729, NULL),
+(17, 'ola', 'Gato', 'Hembra', 'American Shorthair', 5, '3', 'Si', 'Aprico', 'Dócil', 'Trabajo', 'Diego Pezet', 45031729, NULL);
 
 -- --------------------------------------------------------
 
@@ -545,20 +555,6 @@ CREATE TABLE `turnos` (
   `domicilio` varchar(200) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `turnos`
---
-
-INSERT INTO `turnos` (`id`, `title`, `dni_cliente`, `cliente`, `asunto`, `id_mascota`, `mascota`, `status`, `start`, `domicilio`) VALUES
-(31, 'Yacko | Consulta', 45031729, 'Diego Pezet', 'Consulta', 1, 'Yacko', 'Confirmado', '2022-09-06', ''),
-(32, 'Fabri | Limpieza quirúrgica de heridas', 45297893, 'Brisa de la Cerda', 'Limpieza quirúrgica de heridas', 2, 'Fabri', 'Confirmado', '2022-08-20', ''),
-(33, 'Yacko | Control', 45031729, 'Diego Pezet', 'Control', 1, 'Yacko', 'Cancelado', '2022-08-30', ''),
-(34, 'Yacko | Ovarioectomía', 45031729, 'Diego Pezet', 'Ovarioectomía', 1, 'Yacko', 'Confirmado', '2022-09-27', '25 bis N°517'),
-(35, 'Yacko | Control', 45031729, 'Diego Pezet', 'Control', 1, 'Yacko', 'Cancelado', '2022-08-26', ''),
-(36, 'Yacko | Control postcx', 45031729, 'Diego Pezet', 'Control postcx', 1, 'Yacko', 'Confirmado', '2022-11-15', ''),
-(37, 'Yacko | Control general', 45031729, 'Diego Pezet', 'Control general', 1, 'Yacko', 'Confirmado', '2022-09-29', ''),
-(38, 'Yacko | Vacunación', 45031729, 'Diego Pezet', 'Vacunación', 1, 'Yacko', 'Confirmado', '2022-09-30', '');
-
 -- --------------------------------------------------------
 
 --
@@ -625,19 +621,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `fichas`
 --
 ALTER TABLE `fichas`
-  MODIFY `id_ficha` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ficha` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `mascotas`
 --
 ALTER TABLE `mascotas`
-  MODIFY `id_mascota` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_mascota` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `turnos`
 --
 ALTER TABLE `turnos`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
