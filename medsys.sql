@@ -552,7 +552,7 @@ CREATE TABLE `turnos` (
   `mascota` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `status` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `start` date NOT NULL,
-  `domicilio` varchar(200) COLLATE utf8_spanish_ci NOT NULL
+  `domicilio` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
