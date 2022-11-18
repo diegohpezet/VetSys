@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="medsys.php" style="font-size: 30px;">
-            Vetsys <img src="../img/logovetsys.png" width="30" height="30" class="d-inline-block align-content-center" alt="logo">    
+                <img src="../img/header.png" width=140 class="d-inline-block align-content-center" alt="logo"> 
              </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light shadow">
         <div class="container-fluid">
             <a class="navbar-brand" href="medsys.php" style="font-size: 30px;">
-            Vetsys <img src="../img/logovetsys.png" width="30" height="30" class="d-inline-block align-top" alt="">  
+                <img src="../img/header.png" width=140 class="d-inline-block align-content-center" alt="logo">  
             </a>
             <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
