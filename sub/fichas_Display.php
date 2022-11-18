@@ -18,6 +18,15 @@ $ficha = null;
 if (count($results) > 0) {
     $ficha = $results;
 }
+
+if(isset($_POST['borrar_F'])){
+    $turnosql=$conn->prepare('DELETE FROM `fichas` WHERE `id_ficha`=:id_ficha');
+    $turnosql->bindParam(':id_ficha',$_POST['borrar_F']);
+    if($turnosql->execute()){
+        $mensaje= 'Ficha eliminado exitosamente';
+        echo "<meta http-equiv='refresh' content='0'>";
+    }
+}
 ?>
 
 <head>
@@ -64,6 +73,9 @@ if (count($results) > 0) {
                         
                         <p class="card-text text-muted"></p>
                     </div>
+                    <form action="fichas_Display.php?datos_mascota='<?php echo $row['id_mascota'];?>'" class="d-flex justify-content-end m-2" method="post">
+                        <td><button class="btn btn-danger" type="submit" name="borrar_F" value="<?php echo $row['id_ficha']; ?>">🗑</button></td>
+                    </form>
                     <div class="card-footer bg-primary"></div>
                 </div>
             <?php endforeach; ?>
